@@ -6,30 +6,24 @@ import type { FooterLink } from "~/types";
 const links: Array<FooterLink> = [
   {
     url: "https://astro.build/",
-    description: "Astro's official website",
+    description: "Home page",
     icon: "mdi:home",
   },
   {
-    url: "https://github.com/mhyfritz/astro-landing-page",
-    description: "View source on GitHub",
-    icon: "fa-brands:github-alt",
+    url: "https://astro.build/",
+    description: "LinkedIn profile",
+    icon: "fa-brands:linkedin",
   },
   {
     url: "https://astro.build/chat",
-    description: "Astro on Discord",
-    icon: "fa-brands:discord",
-  },
-  {
-    url: "https://twitter.com/astrodotbuild",
-    description: "Astro on Twitter",
-    icon: "fa-brands:twitter",
+    description: "Whatsapp chat",
+    icon: "fa-brands:whatsapp",
   },
 ];
 ---
 
-<footer class="relative flex h-64 items-center justify-center">
+<footer class="relative flex h-52 items-center justify-center dark:bg-default">
   <div class="absolute inset-0 overflow-hidden opacity-40">
-    <HeroImage />
   </div>
   <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
     {

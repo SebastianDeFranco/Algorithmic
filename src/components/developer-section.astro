@@ -1,0 +1,86 @@
+---
+// Archivo: src/components/DeveloperSection.astro
+---
+
+<section class=" text-white py-16 px-4 md:px-8 lg:px-16 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-primary">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          </h2>
+        </div>
+        <div class="text-gray-300 space-y-4">
+          <p>
+            Natus ad ipsum pariatur autem, fugit laborum in atque amet obcaecati? Nisi minima aspernatur, quidem nulla cupiditate nam consequatur eligendi magni adipisci.
+          </p>
+          <p>
+            Nisi minima aspernatur, quidem nulla cupiditate nam consequatur eligendi magni adipisci.
+          </p>
+        </div>
+      </div>
+      <div class="mt-16 relative h-64">
+        <svg
+          viewBox="0 0 1000 300"
+          preserveAspectRatio="none"
+          class="absolute bottom-0 w-full h-full"
+        >
+          <path
+            d="M0,100 C150,20 350,150 500,80 C650,10 850,100 1000,60 L1000,300 L0,300 Z"
+            fill="rgba(139, 92, 246, 0.3)"
+            stroke="#8B5CF6"
+            stroke-width="2"
+          />
+          <path
+            d="M0,150 C200,80 400,200 600,100 C800,0 1000,100 1000,50 L1000,300 L0,300 Z"
+            fill="rgba(59, 130, 246, 0.3)"
+            stroke="#3B82F6"
+            stroke-width="2"
+          />
+          
+          <path
+          d="M0,200 C300,100 500,250 700,150 C900,50 1000,150 1000,100 L1000,300 L0,300 Z"
+          fill="rgba(16, 185, 129, 0.3)"
+          stroke="#10B981"
+          stroke-width="2"
+        />
+        </svg>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    /* Animación para las líneas y áreas del gráfico */
+    @keyframes wavyAnimation {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(15px);
+      }
+      100% {
+        transform:translateY(0);
+      }
+    }
+  
+    svg path {
+      animation: wavyAnimation 8s ease-in-out infinite;
+    }
+  
+    svg path:nth-child(1) {
+      animation-delay: 0s;
+    }
+  
+    svg path:nth-child(2) {
+      animation-delay: -2s;
+    }
+  
+    svg path:nth-child(3) {
+      animation-delay: -4s;
+    }
+  
+    svg path:nth-child(4) {
+      animation-delay: -6s;
+    }
+
+  </style>
