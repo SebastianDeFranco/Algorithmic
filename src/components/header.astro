@@ -3,7 +3,6 @@ import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 import logo from "../assets/iaanalitycs.png";
-import logoInverted from "../assets/iaanalitycs-invert.png";
 
 const navItems: Array<NavItem> = [
   { title: "Services", url: "#services" },
@@ -14,7 +13,7 @@ const navItems: Array<NavItem> = [
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="fixed top-0 z-20 flex w-full items-center justify-between border-b border-transparent bg-opacity-100 px-8 py-4 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">IAANALITYCS</h1>
@@ -27,7 +26,7 @@ const navItems: Array<NavItem> = [
           {
             navItems.map(({ title, url }) => (
               <li>
-                <a class="text-sm" href={url}>
+                <a class="text-sm hover:text-primary" href={url}>
                   {title}
                 </a>
               </li>
@@ -43,7 +42,7 @@ const navItems: Array<NavItem> = [
       >
         <!-- <Icon name="mdi:menu" class="size-8" /> -->
       </button>
-      <ThemeSwitcher />
+      <!-- <ThemeSwitcher /> -->
     </div>
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -99,7 +98,7 @@ const navItems: Array<NavItem> = [
   invariant(openNavButton, "openNavButton should not be null");
   invariant(closeNavButton, "closeNavButton should not be null");
   invariant(logoImg, "logoImg should not be null");
-  invariant(themeSwitcher, "themeSwitcher should not be null");
+  // invariant(themeSwitcher, "themeSwitcher should not be null");
 
   const openMenu = () => {
     MicroModal.show(menuModalId, { disableScroll: true });
@@ -112,9 +111,14 @@ const navItems: Array<NavItem> = [
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
 
-  document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-    header.classList.toggle("fixed-header", d < 0);
+
+  
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {  
+      header.classList.add("bg-opacity-50");  
+    } else {
+      header.classList.remove("bg-opacity-50");
+    }
   });
 
   menu.addEventListener("click", (event) => {
@@ -123,30 +127,6 @@ const navItems: Array<NavItem> = [
     }
   });
 
-  // Función para actualizar la imagen del logo según el tema
-  const updateLogo = () => {
-    const theme = localStorage.getItem("theme") || "light";
-    // Ajuste para mostrar la imagen correcta según el tema
-    logoImg.src = theme === "dark" 
-      ? new URL("../assets/iaanalitycs.png", import.meta.url).href 
-      : new URL("../assets/iaanalitycs-invert.png", import.meta.url).href;
-  };
-
-  // Actualiza el logo al cargar la página
-  window.addEventListener("DOMContentLoaded", () => {
-    updateLogo();
-  });
-
-  // Actualiza el logo cuando se cambie el tema
-  themeSwitcher?.addEventListener("click", () => {
-    // Cambia el tema en localStorage
-    const currentTheme = localStorage.getItem("theme") || "light";
-    const newTheme = currentTheme === "light" ? "dark" : "light";
-    localStorage.setItem("theme", newTheme);
-
-    // Actualiza el logo inmediatamente
-    updateLogo();
-  });
 </script>
 
 

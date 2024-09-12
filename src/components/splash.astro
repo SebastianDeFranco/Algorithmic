@@ -1,23 +1,15 @@
 ---
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
-import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
-
 ---
 
 <section class="relative h-full bg-black">
   <Starfield />
-  <!-- <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
-    <HeroImage />
-  </div> -->
   <div class="relative flex items-center justify-center h-full">
     <h2
-      class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
+      class="flex flex-col items-center justify-center gap-2 text-center sm:gap-4"
     >
-      <!-- <Icon name="logomark" class="size-20 text-white md:size-32" /> -->
       <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-5xl md:text-7xl shadow-md"
+        class="gradient-text font-extrabold tracking-tighter text-4xl sm:text-5xl md:text-7xl shadow-md"
       >
         Building data solutions
         <br /> and software,
@@ -26,6 +18,7 @@ import Starfield from "~/components/starfield.astro";
     </h2>
   </div>
 </section>
+
 
 <noscript>
   <style>
