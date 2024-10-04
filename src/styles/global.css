@@ -11,3 +11,7 @@ a,
   @apply bg-gradient-to-br from-green-200 via-green-500 to-emerald-500;
 }
 
+header{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
