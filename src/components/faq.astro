@@ -1,0 +1,81 @@
+---
+const faqs = [
+  {
+    question: "What type of services are offered at Algorithmic?",
+    answer: "We offer a full range of IT consulting services, including data analysis, custom software development, web design, mobile application development and systems optimization. We specialize in customized technological solutions that adapt to the needs of each client."
+  },
+  {
+    question: "Can you help me develop custom software for my business?",
+    answer: "Yes, we develop custom software for companies of all sizes. Our team works with you to understand your specific requirements and develop solutions that improve your processes and optimize your company's efficiency."
+  },
+  {
+    question: "How do you guarantee the quality of the projects you develop?",
+    answer: "We focus on quality throughout the entire development cycle, we also apply strict quality controls and user testing to ensure that the final product meets your expectations and is error-free."
+  },
+  {
+    question: "Do you offer technical support once the project is completed?",
+    answer: "Yes, we offer post-implementation technical support to make sure everything works correctly. This includes bug fixes, improvements, and ongoing updates to ensure your solution keeps up with the changing needs of your business."
+  },
+  {
+    question: "How can I contact them?",
+    answer: "You can contact us through our email or whatsapp. We will organize an initial meeting to understand your needs and objectives, and from there, we will develop a personalized proposal for your project."
+  }
+];
+---
+
+<div class="faq-container" id="faq">
+  <h2 class="gradient-text text-center font-extrabold tracking-tight text-6xl">FAQ</h2>
+  <div class="faq-list">
+    {faqs.map((faq, index) => (
+      <details class="faq-item">
+        <summary class="faq-question">{faq.question}</summary>
+        <p class="faq-answer">{faq.answer}</p>
+      </details>
+    ))}
+  </div>
+</div>
+
+<style>
+  .faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: rgba(var(--accent-dark), 0.2);
+    border-radius: 8px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    background: rgba(var(--accent-light), 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .faq-question {
+    padding: 1rem;
+    cursor: pointer;
+    color: green;
+    font-weight: bold;
+    color: rgb(var(--accent-light));
+  }
+
+  .faq-question:hover {
+    background: rgba(var(--accent-light), 0.2);
+  }
+
+  .faq-answer {
+    padding: 1rem;
+    color: white;
+    background: rgba(var(--accent-dark), 0.3);
+  }
+
+  details[open] .faq-question {
+    background: rgba(var(--accent-light), 0.2);
+  }
+</style>
