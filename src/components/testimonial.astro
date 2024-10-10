@@ -1,0 +1,58 @@
+---
+interface Props {
+	name: string;
+	testimonial: string;
+	image: string;
+}
+
+const { name, testimonial, image } = Astro.props;
+---
+
+<div class="testimonial">
+	<div class="testimonial-content">
+		<div class="image-container">
+			<img src={image} alt={`Foto de ${name}`} />
+		</div>
+		<div class="text-content">
+			<p class="quote">{testimonial}</p>
+			<p class="author">- {name}</p>
+		</div>
+	</div>
+</div>
+
+<style>
+	.testimonial {
+		border-radius: 8px;
+		padding: 1.5rem;
+		margin-bottom: 1rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+	}
+	.testimonial-content {
+		display: flex;
+		align-items: center;
+	}
+	.image-container {
+		flex-shrink: 0;
+		width: 80px;
+		height: 80px;
+		margin-right: 1rem;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	.image-container img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.text-content {
+		flex-grow: 1;
+	}
+	.quote {
+		font-style: italic;
+		margin-bottom: 0.5rem;
+	}
+	.author {
+		font-weight: bold;
+		text-align: right;
+	}
+</style>

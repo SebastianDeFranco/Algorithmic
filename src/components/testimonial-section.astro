@@ -1,0 +1,55 @@
+---
+import Testimonial from "./testimonial.astro";
+
+const testimonials = [
+    {
+        name: "Laura V.",
+        testimonial:
+            "Their development team provided exceptional service. They truly understood our needs and delivered custom software that boosted our operations. The speed and quality exceeded what we expected.",
+        image: "../../public/assets/person-1.jpg",
+    },
+    {
+        name: "Javier M.",
+        testimonial:
+            "Their data analysis consulting was a game changer. We now make decisions using precise data insights, which allowed us to improve our strategies and overall company performance.",
+        image: "../../public/assets/person-2.jpg",
+    },
+    {
+        name: "Paula R.",
+        testimonial:
+            "The team's focus on design made our software highly intuitive. Not only was the technical solution robust, but the user interface was seamless, improving the overall user experience.",
+        image: "../../public/assets/person-3.jpg",
+    },
+];
+---
+
+<section class="testimonials-section" id="testimonials">
+    <h2
+        class="gradient-text text-center font-extrabold tracking-tight text-6xl"
+    >
+        Testimonials
+    </h2>
+    <div class="testimonials-grid">
+        {
+            testimonials.map((t) => (
+                <Testimonial
+                    name={t.name}
+                    testimonial={t.testimonial}
+                    image={t.image}
+                />
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .testimonials-section {
+        padding: 4rem 0;
+    }
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+</style>

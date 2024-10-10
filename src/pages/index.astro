@@ -1,6 +1,5 @@
 ---
 import "@fontsource-variable/inter";
-import Compatibility from "~/components/about-us.astro";
 import Services from "~/components/services.astro";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
@@ -10,6 +9,7 @@ import Splash from "~/components/splash.astro";
 import Faq from "~/components/faq.astro";
 import { FaWhatsapp } from 'react-icons/fa';
 import "~/styles/index.css";
+import TestimonialSection from "~/components/testimonial-section.astro";
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -68,8 +68,8 @@ const description =
     <div class="space-y-24 px-8 py-32">
       <Intro />
       <Services />
-      <Compatibility />
       <Projects />
+      <TestimonialSection />
       <Faq />
     </div>
     <section>
