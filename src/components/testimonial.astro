@@ -2,17 +2,17 @@
 interface Props {
 	name: string;
 	testimonial: string;
-	image: string;
+	// image: string;
 }
 
-const { name, testimonial, image } = Astro.props;
+const { name, testimonial } = Astro.props;
 ---
 
 <div class="testimonial">
 	<div class="testimonial-content">
-		<div class="image-container">
+		<!-- <div class="image-container">
 			<img src={image} alt={`Foto de ${name}`} />
-		</div>
+		</div> -->
 		<div class="text-content">
 			<p class="quote">{testimonial}</p>
 			<p class="author">- {name}</p>
@@ -23,9 +23,10 @@ const { name, testimonial, image } = Astro.props;
 <style>
 	.testimonial {
 		border-radius: 8px;
-		padding: 1.5rem;
+		padding: 2rem;
+		margin-top: 1rem;
 		margin-bottom: 1rem;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
 	}
 	.testimonial-content {
 		display: flex;
