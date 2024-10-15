@@ -5,48 +5,48 @@ import type { FeatureItem } from "~/types";
 
 const features: Array<FeatureItem> = [
   {
-    title: "Custom Design",
+    title: "Diseño personalizado",
     description:
-      "We create unique and attractive designs that reflect your brand's identity and captivate your customers.",
+      "Creamos diseños únicos y atractivos que reflejan la identidad de tu marca y cautivan a tus clientes.",
     icon: "mdi:palette",
   },
   {
-    title: "Tailored Software Development",
+    title: "Desarrollo de software a medida",
     description:
-      "We develop custom software solutions that fit the specific needs of your business.",
+      "Desarrollamos soluciones de software personalizadas que se adaptan a las necesidades específicas de su negocio.",
     icon: "mdi:code-braces",
   },
   {
-    title: "Website Creation",
+    title: "Creación de sitios web",
     description:
-      "We build responsive and optimized websites, ensuring an exceptional user experience across all devices.",
+      "Creamos sitios web responsivos y optimizados, garantizando una experiencia de usuario excepcional en todos los dispositivos.",
     icon: "mdi:web",
   },
   {
-    title: "SEO Optimization",
+    title: "Optimización SEO",
     description:
-      "We implement SEO strategies that improve your website's visibility in search engines and attract organic traffic.",
+      "Implementamos estrategias SEO que mejoran la visibilidad de tu sitio web en los motores de búsqueda y atraen tráfico orgánico.",
     icon: "mdi:chart-line",
   },
   {
-    title: "Data Consulting",
+    title: "Consultoría de datos",
     description:
-      "We help you analyze and manage your data effectively to make informed and strategic decisions.",
+      "Le ayudamos a analizar y gestionar sus datos de forma eficaz para tomar decisiones informadas y estratégicas.",
     icon: "mdi:database",
   },
   {
-    title: "Network Consulting",
+    title: "Consultoría en Redes",
     description:
-      "We offer expert guidance to optimize and secure your business network infrastructure, ensuring reliable and efficient operations.",
+      "Ofrecemos orientación experta para optimizar y proteger la infraestructura de red de su empresa, garantizando operaciones confiables y eficientes.",
     icon: "mdi:lan",
   },
 ];
 ---
 
-<ContentSection title="Our Services" id="services">
+<ContentSection title="Nuestros Servicios" id="services">
   <Fragment slot="lead">
-    At 
-    <span class="text-primary">ALGORITHMIC</span>, we provide tailored solutions that enhance your online presence and drive success.</Fragment>
+    En 
+    <span class="text-primary">ALGORITHMIC</span>, ofrecemos soluciones personalizadas que potencian su presencia en línea y aceleran su éxito.</Fragment>
   <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
       features.map(({ title, description, icon }) => (
